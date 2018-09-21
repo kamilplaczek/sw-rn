@@ -1,13 +1,13 @@
 import { createStackNavigator } from 'react-navigation';
-import { Home } from './home/home.component';
+import { HomeTabs } from './home/home.navigation';
 
 export const screens = {
-  HOME: 'home',
+  HOME: 'Home',
 };
 
 export const AppStack = createStackNavigator(
   {
-    [screens.HOME]: Home,
+    [screens.HOME]: HomeTabs,
   },
   {
     initialRouteName: screens.HOME,
