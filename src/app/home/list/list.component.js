@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { ActivityIndicator, FlatList, Text, View } from 'react-native';
+import { styles } from './list.styles';
+import { ListElement } from './list-element/list-element.component';
 
 export class List extends Component {
   state = {
@@ -24,21 +26,15 @@ export class List extends Component {
     });
   };
 
-  renderFilm = ({ item }) => (
-    <View style={{ padding: 20 }}>
-      <Text>{item.title}</Text>
-      <Text>{item.director}</Text>
-      <Text>{item.releaseDate}</Text>
-    </View>
-  );
+  renderFilm = ({ item }) => <ListElement film={item} />;
 
   filmKeyExtractor = item => `${item.id}`;
 
   render() {
     const { films } = this.state;
     return films.length > 0 ? (
-      <View style={{ flex: 1 }}>
-        <FlatList style={{ flex: 1 }} keyExtractor={this.filmKeyExtractor} data={films} renderItem={this.renderFilm} />
+      <View style={styles.container}>
+        <FlatList style={styles.list} keyExtractor={this.filmKeyExtractor} data={films} renderItem={this.renderFilm} />
       </View>
     ) : (
       <ActivityIndicator size="large" style={{ marginTop: '60%' }} />
