@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { ActivityIndicator, FlatList, Text, View } from 'react-native';
 import { styles } from './list.styles';
 import { ListElement } from './list-element/list-element.component';
+import { screens } from '../../app.navigation';
+import { SafeAreaView } from 'react-navigation';
 
 export class List extends Component {
   state = {
@@ -26,16 +28,26 @@ export class List extends Component {
     });
   };
 
-  renderFilm = ({ item }) => <ListElement film={item} />;
+  renderFilm = ({ item }) => (
+    <ListElement onPress={() => this.props.navigation.navigate(screens.DETAILS, { film: item })} film={item} />
+  );
+
+  renderHeader = () => <Text style={styles.listHeader}>Star Wars Movies:</Text>;
 
   filmKeyExtractor = item => `${item.id}`;
 
   render() {
     const { films } = this.state;
     return films.length > 0 ? (
-      <View style={styles.container}>
-        <FlatList style={styles.list} keyExtractor={this.filmKeyExtractor} data={films} renderItem={this.renderFilm} />
-      </View>
+      <SafeAreaView style={styles.container}>
+        <FlatList
+          ListHeaderComponent={this.renderHeader}
+          style={styles.list}
+          keyExtractor={this.filmKeyExtractor}
+          data={films}
+          renderItem={this.renderFilm}
+        />
+      </SafeAreaView>
     ) : (
       <ActivityIndicator size="large" style={{ marginTop: '60%' }} />
     );
