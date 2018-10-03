@@ -4,13 +4,13 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    paddingHorizontal: 20,
   },
   list: {
     flex: 1,
   },
   listHeader: {
-    marginTop: 20,
+    paddingHorizontal: 20,
+    paddingTop: 20,
     fontSize: 30,
   },
 });

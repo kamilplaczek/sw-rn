@@ -9,14 +9,13 @@ export class Details extends Component {
   });
 
   state = {
-    position: new Animated.Value(400),
+    position: new Animated.Value(200),
   };
 
   componentDidMount = () => {
     Animated.timing(this.state.position, {
       toValue: -300,
       duration: 15000,
-      useNativeDriver: true,
     }).start();
   };
 
