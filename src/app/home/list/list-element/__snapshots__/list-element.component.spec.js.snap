@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`list element component renders correctly 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+>
+  <View
+    style={
+      Object {
+        "borderBottomColor": "#ccc",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+        "paddingBottom": 10,
+        "paddingTop": 10,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "width": 70,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 30,
+          }
+        }
+      >
+        🎞
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 16,
+            "fontWeight": "bold",
+          }
+        }
+      />
+      <Text>
+        bar
+      </Text>
+      <Text>
+        2018-09-20
+      </Text>
+    </View>
+  </View>
+</View>
+`;
