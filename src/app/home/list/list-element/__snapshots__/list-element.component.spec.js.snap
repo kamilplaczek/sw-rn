@@ -11,6 +11,7 @@ exports[`list element component renders correctly 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
+  testID="listElement"
 >
   <View
     style={

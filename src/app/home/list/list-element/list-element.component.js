@@ -7,7 +7,7 @@ export class ListElement extends Component {
     const { film, onPress } = this.props;
 
     return (
-      <TouchableHighlight underlayColor="transparent" onPress={onPress}>
+      <TouchableHighlight testID="listElement" underlayColor="transparent" onPress={onPress}>
         <View style={styles.container}>
           <View style={styles.iconContainer}>
             <Text style={styles.icon}>🎞</Text>
